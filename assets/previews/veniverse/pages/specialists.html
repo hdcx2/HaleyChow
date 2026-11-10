@@ -1,0 +1,123 @@
+<div class="breadcrumb">
+    <a href="#" onclick="loadPage('home');return false">Home</a> &rsaquo;
+    <a href="#" onclick="showCat('treatment');return false">Treatment Resources</a> &rsaquo;
+    <span>Find a Specialist</span>
+</div>
+<h1 class="page-title">Find a Vascular Anomalies Specialist</h1>
+<p class="page-subtitle">Vascular malformations are uncommon and may need several specialties working together. These directories and center pages can help patients find a team with relevant experience.</p>
+<div class="title-bar"></div>
+
+<div class="case-note">
+    <strong>Good starting point:</strong> look for a multidisciplinary vascular anomalies center or clinic. The International Society for the Study of Vascular Anomalies (ISSVA) maintains a specialist and multidisciplinary team directory. Its public specialist list includes members who opted to display their information, so it may not be complete.
+    <a href="https://www.issva.org/resources" target="_blank" rel="noopener">ISSVA resources</a> ·
+    <a href="https://www.issva.org/find/index.php?Search=Search&amp;mode=map" target="_blank" rel="noopener">ISSVA Find a Specialist</a>
+</div>
+
+<h2>Match a condition to specialist teams</h2>
+<p>Choose a condition to see relevant specialties and possible care centers. Contact each center to confirm its current services and experience with the specific malformation.</p>
+<div class="specialist-match-panel">
+    <label for="specialistCondition">Select a malformation or condition</label>
+    <select id="specialistCondition" onchange="showConditionSpecialistMatches()">
+        <option value="">Choose a condition</option>
+        <option value="brbns">Blue Rubber Bleb Nevus Syndrome (BRBNS)</option>
+        <option value="facial-vm">Facial venous malformation</option>
+        <option value="intramuscular-vm">Intramuscular venous malformation</option>
+        <option value="gi-vm">Gastrointestinal venous malformation</option>
+        <option value="extremity-vm">Extremity venous malformation</option>
+        <option value="cystic-hygroma">Cystic hygroma / macrocystic lymphatic malformation</option>
+        <option value="tongue-lm">Tongue lymphatic malformation / microcystic</option>
+        <option value="axillary-lm">Axillary lymphatic malformation</option>
+        <option value="retroperitoneal-lm">Retroperitoneal lymphatic malformation</option>
+        <option value="cervical-lm">Cervical lymphatic malformation</option>
+        <option value="orbital-lm">Orbital lymphatic malformation</option>
+        <option value="cm-avm">Capillary Malformation–Arteriovenous Malformation (CM-AVM)</option>
+        <option value="port-wine">Port-wine birthmark</option>
+        <option value="salmon-patch">Salmon patch / nevus simplex</option>
+        <option value="sws">Sturge-Weber syndrome (SWS)</option>
+        <option value="brain-avm">Brain AVM</option>
+        <option value="skin-avm">Cutaneous / superficial AVM</option>
+        <option value="limb-avm">Limb AVM</option>
+        <option value="asymptomatic-brain-avm">Incidental / asymptomatic cerebral AVM</option>
+        <option value="pulmonary-avm">Pulmonary AVM</option>
+        <option value="spinal-avm">Spinal AVM</option>
+        <option value="kts">Klippel-Trenaunay syndrome (KTS)</option>
+    </select>
+    <div id="specialistMatchResults" class="specialist-match-results" aria-live="polite">
+        <p class="case-note">Choose a condition to view matching specialty guidance and center leads.</p>
+    </div>
+</div>
+
+<h2>Specialties that may be involved</h2>
+<div class="case-list">
+    <article class="case-card">
+        <h3>Interventional Radiology</h3>
+        <p>Uses imaging to diagnose and treat lesions with procedures such as sclerotherapy for selected slow-flow malformations or embolization for selected fast-flow AVMs.</p>
+        <p><strong>Often involved in:</strong> venous, lymphatic, and arteriovenous malformations.</p>
+    </article>
+    <article class="case-card">
+        <h3>Dermatology / Pediatric Dermatology</h3>
+        <p>Evaluates skin findings, helps distinguish vascular anomaly types, and may provide laser or medical treatment for selected lesions.</p>
+        <p><strong>Often involved in:</strong> capillary malformations, port-wine birthmarks, and skin lesions associated with syndromes.</p>
+    </article>
+    <article class="case-card">
+        <h3>Vascular Anomalies Surgery</h3>
+        <p>Plastic, pediatric, general, orthopedic, or head-and-neck surgeons may be involved when a lesion affects function, causes symptoms, or needs removal or reconstruction.</p>
+        <p><strong>Often involved in:</strong> complex lesions, overgrowth, or lesions affecting the face, airway, limbs, or organs.</p>
+    </article>
+    <article class="case-card">
+        <h3>Hematology / Oncology and Vascular Medicine</h3>
+        <p>May help manage clotting or bleeding complications and coordinate medical therapies for selected complex vascular anomalies.</p>
+        <p><strong>Often involved in:</strong> extensive venous or lymphatic malformations, coagulopathy, or complex syndromes.</p>
+    </article>
+    <article class="case-card">
+        <h3>Clinical Genetics / Genetic Counseling</h3>
+        <p>Can assess whether a vascular anomaly may be part of a genetic syndrome, discuss testing, and explain implications for relatives.</p>
+        <p><strong>Often involved in:</strong> multiple lesions, family history, overgrowth, or syndromic features.</p>
+    </article>
+    <article class="case-card">
+        <h3>Neurology, Neurosurgery, and Neurointerventional Specialists</h3>
+        <p>Evaluate brain or spinal AVMs and neurologic complications; the appropriate team depends on the lesion’s location and symptoms.</p>
+        <p><strong>Often involved in:</strong> cerebral or spinal AVMs and Sturge-Weber syndrome.</p>
+    </article>
+    <article class="case-card">
+        <h3>Other Site-Specific Specialists</h3>
+        <p>Ophthalmology, otolaryngology, pulmonology, gastroenterology, cardiology, orthopedics, rehabilitation, and lymphedema therapy may contribute when the affected body system calls for their expertise.</p>
+    </article>
+</div>
+
+<h2>Official directories and example centers</h2>
+<div class="case-list">
+    <article class="case-card">
+        <h3>ISSVA Find a Specialist and Multidisciplinary Teams</h3>
+        <p>International directory searchable by region and specialty. The public directory is opt-in and should be treated as a starting point.</p>
+        <p><a href="https://www.issva.org/resources" target="_blank" rel="noopener">ISSVA resources and team directory</a> · <a href="https://www.issva.org/find/index.php?Search=Search&amp;mode=map" target="_blank" rel="noopener">Search listed specialists</a></p>
+    </article>
+    <article class="case-card">
+        <h3>Vascular Birthmarks Foundation Find a Doctor</h3>
+        <p>Worldwide provider directory searchable by location, birthmark type, syndrome, specialty, and procedures offered.</p>
+        <p><a href="https://birthmark.org/find-a-doctor/" target="_blank" rel="noopener">Search the VBF doctor directory</a></p>
+    </article>
+    <article class="case-card">
+        <h3>Johns Hopkins Vascular Anomalies Center — Baltimore, Maryland</h3>
+        <p>The center lists interventional radiology, plastic surgery, ENT, orthopedics, general surgery, dermatology, hematology/oncology, and genetics. Its director is Clifford Raabe Weiss, MD, an interventional radiologist.</p>
+        <p><a href="https://www.hopkinsmedicine.org/vascularanomaliescenter" target="_blank" rel="noopener">Center and current care team</a></p>
+    </article>
+    <article class="case-card">
+        <h3>Children’s Hospital of Philadelphia Comprehensive Vascular Anomalies Program — Philadelphia, Pennsylvania</h3>
+        <p>Pediatric multidisciplinary program directed by Denise Adams, MD. The current team listing includes interventional radiology, lymphatics, dermatology, genetics, neurology, neurosurgery, orthopedics, ENT, surgery, and other specialties.</p>
+        <p><a href="https://www.chop.edu/centers-programs/vascular-anomalies-program/our-team" target="_blank" rel="noopener">Program team and contact information</a></p>
+    </article>
+    <article class="case-card">
+        <h3>Stanford Medicine Children’s Health Vascular Anomalies Team — Palo Alto, California</h3>
+        <p>The team lists dermatology, hematology/oncology, radiology and interventional radiology, ENT, plastic surgery, hand and upper-limb surgery, genetics, and cardiology. Joyce Teng, MD, PhD, is listed as director of Pediatric Dermatology with vascular-anomalies expertise.</p>
+        <p><a href="https://www.stanfordchildrens.org/en/services/vascular-anomalies/careteam.html" target="_blank" rel="noopener">Current team and specialties</a></p>
+    </article>
+</div>
+
+<p class="case-note"><strong>Choosing a clinic:</strong> confirm that the team treats the patient’s specific malformation and age group, ask which specialties review cases together, and check referral and insurance requirements. Provider rosters and services can change, so confirm details with the clinic.</p>
+
+<h2>Research references</h2>
+<ul>
+    <li><a href="https://www.issva.org/classification" target="_blank" rel="noopener">International Society for the Study of Vascular Anomalies (ISSVA). Classification &amp; Glossary for Vascular Anomalies, 2025.</a></li>
+    <li><a href="https://pubmed.ncbi.nlm.nih.gov/26055853/" target="_blank" rel="noopener">Wassef M et al. Vascular Anomalies Classification: Recommendations From the ISSVA. Pediatrics. 2015;136(1):e203–e214.</a></li>
+</ul>

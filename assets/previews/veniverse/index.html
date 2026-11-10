@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Veniverse — Beyond the Blueprint</title>
+
+    <!-- Fonts and icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+    <div id="progressBar"></div>
+    <div class="toast" id="toast"></div>
+
+
+    <!-- ========== SIDEBAR (opened by the three-line button) ========== -->
+    <div id="menuOverlay" onclick="toggleMenu(false)"></div>
+
+    <aside id="menuDrawer" aria-label="Site menu" aria-hidden="true">
+        <button type="button" class="menu-close" onclick="toggleMenu(false)" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <a href="#" class="menu-link" onclick="openCondition('home');return false">Home</a>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Klippel-Trenaunay Syndrome</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('combined','overview');return false">Overview</a>
+                <a href="#" onclick="openCondition('combined','symptoms');return false">Symptoms</a>
+                <a href="#" onclick="openCondition('combined','causes');return false">Causes</a>
+                <a href="#" onclick="openCondition('combined','diagnosis');return false">Diagnosis</a>
+                <a href="#" onclick="openCondition('combined','treatment');return false">Treatment</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Marfan Syndrome</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('singlegene-marfan','overview');return false">Overview</a>
+                <a href="#" onclick="openCondition('singlegene-marfan','symptoms');return false">Symptoms</a>
+                <a href="#" onclick="openCondition('singlegene-marfan','causes');return false">Causes</a>
+                <a href="#" onclick="openCondition('singlegene-marfan','diagnosis');return false">Diagnosis</a>
+                <a href="#" onclick="openCondition('singlegene-marfan','treatment');return false">Treatment</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Ehlers-Danlos Syndrome</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('singlegene-eds','overview');return false">Overview</a>
+                <a href="#" onclick="openCondition('singlegene-eds','symptoms');return false">Symptoms</a>
+                <a href="#" onclick="openCondition('singlegene-eds','causes');return false">Causes</a>
+                <a href="#" onclick="openCondition('singlegene-eds','diagnosis');return false">Diagnosis</a>
+                <a href="#" onclick="openCondition('singlegene-eds','treatment');return false">Treatment</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Arteriovenous Malformations</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('avms','overview');return false">Overview</a>
+                <a href="#" onclick="openCondition('avms','symptoms');return false">Symptoms</a>
+                <a href="#" onclick="openCondition('avms','causes');return false">Causes</a>
+                <a href="#" onclick="openCondition('avms','diagnosis');return false">Diagnosis</a>
+                <a href="#" onclick="openCondition('avms','treatment');return false">Treatment</a>
+            </div>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Genetic Diseases</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('chromosomal');return false">Chromosomal Disorders</a>
+                <a href="#" onclick="openCondition('singlegene');return false">Single-Gene Disorders</a>
+                <a href="#" onclick="openCondition('multifactorial');return false">Multifactorial / Complex</a>
+                <a href="#" onclick="openCondition('mitochondrial');return false">Mitochondrial Disorders</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Vascular Malformations</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('avms');return false">Arteriovenous Malformations</a>
+                <a href="#" onclick="openCondition('venous');return false">Venous Malformations</a>
+                <a href="#" onclick="openCondition('lymphatic');return false">Lymphatic Malformations</a>
+                <a href="#" onclick="openCondition('capillary');return false">Capillary Malformations</a>
+                <a href="#" onclick="openCondition('combined');return false">Combined / Complex</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>3D Models Library</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('bycondition');return false">By Condition Type</a>
+                <a href="#" onclick="openCondition('bybody');return false">By Body System</a>
+                <a href="#" onclick="openCondition('viewer');return false">Interactive Viewer</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Treatment Resources</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('specialists');return false">Specialist Directory</a>
+                <a href="#" onclick="openCondition('centers');return false">Treatment Centers</a>
+                <a href="#" onclick="openCondition('therapies');return false">Options &amp; Therapies</a>
+                <a href="#" onclick="openCondition('trials');return false">Clinical Trials</a>
+                <a href="#" onclick="openCondition('insurance');return false">Insurance &amp; Financial</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Community &amp; Support</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('forums');return false">Patient Forums</a>
+                <a href="#" onclick="openCondition('caregiver');return false">Caregiver Groups</a>
+                <a href="#" onclick="openCondition('stories');return false">Stories &amp; Testimonials</a>
+                <a href="#" onclick="openCondition('events');return false">Events &amp; Webinars</a>
+            </div>
+        </div>
+
+        <div class="menu-group">
+            <button type="button" class="menu-group-btn" onclick="toggleMenuGroup(this)" aria-expanded="false">
+                <span>Learn &amp; Research</span>
+                <i class="fas fa-caret-down menu-caret"></i>
+            </button>
+            <div class="menu-sub">
+                <a href="#" onclick="openCondition('publications');return false">Research &amp; Publications</a>
+                <a href="#" onclick="openCondition('articles');return false">Educational Articles</a>
+                <a href="#" onclick="openCondition('glossary');return false">Glossary of Terms</a>
+                <a href="#" onclick="openCondition('faqs');return false">FAQs</a>
+            </div>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <a href="#" class="menu-link" onclick="openCondition('contact');return false">Contact</a>
+    </aside>
+
+
+    <!-- ========== TOP NAVIGATION BAR ========== -->
+    <header id="topNav">
+        <button type="button" class="menu-toggle" id="menuToggle" onclick="toggleMenu()"
+                aria-label="Open menu" aria-expanded="false" aria-controls="menuDrawer">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <a href="#" class="site-brand" onclick="loadPage('home');return false" aria-label="The Veniverse home">
+            <i class="fas fa-draw-polygon" aria-hidden="true"></i>
+            <span class="site-brand-name">The Veniverse</span>
+            <span class="site-brand-tagline">Beyond the Blueprint</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#" onclick="loadPage('home');return false" class="active" data-nav="home"><i class="fas fa-home"></i> Home</a>
+            <a href="#" onclick="showCat('genetic');return false" data-nav="genetic"><i class="fas fa-dna"></i> Genetic Diseases</a>
+            <a href="#" onclick="showCat('vascular');return false" data-nav="vascular"><i class="fas fa-heartbeat"></i> Vascular Malformations</a>
+            <a href="#" onclick="showCat('3d');return false" data-nav="3d"><i class="fas fa-cube"></i> 3D Models</a>
+            <a href="#" onclick="showCat('treatment');return false" data-nav="treatment"><i class="fas fa-hospital"></i> Treatment</a>
+            <a href="#" onclick="showCat('community');return false" data-nav="community"><i class="fas fa-users"></i> Community</a>
+            <a href="#" onclick="showCat('learn');return false" data-nav="learn"><i class="fas fa-search"></i> Research</a>
+        </div>
+
+        <div class="nav-right">
+            <button type="button" class="nav-btn" onclick="toggleDark()" aria-label="Toggle dark mode">
+                <i class="fas fa-moon" id="darkIcon"></i>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- ========== PAGE CARD ========== -->
+    <main id="mainContent" class="container">
+
+        <!-- ===== HOME PAGE (always in index.html) ===== -->
+        <div id="page-home">
+
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>The Veniverse</h1>
+                    <p class="hero-kicker">Beyond the Blueprint</p>
+                    <p class="typed-text" id="typedText"></p>
+                </div>
+            </section>
+
+            <div class="search-section">
+                <form class="search-wrap" id="searchForm" role="search" onsubmit="submitSearch(event)">
+                    <input type="search" id="searchInput" oninput="handleSearch()"
+                           placeholder="Search conditions, symptoms, or treatments..."
+                           aria-label="Search conditions" aria-controls="searchSuggest" autocomplete="off" />
+                    <button type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="search-suggest" id="searchSuggest"></div>
+            </div>
+
+            <h2 class="section-title">Browse by topic</h2>
+
+            <div class="categories">
+                <div class="cat-card" onclick="showCat('genetic')">
+                    <h3>Genetic Diseases</h3>
+                    <p>Inherited and congenital conditions</p>
+                </div>
+                <div class="cat-card" onclick="showCat('vascular')">
+                    <h3>Vascular Malformations</h3>
+                    <p>Blood and lymphatic vessel anomalies</p>
+                </div>
+                <div class="cat-card" onclick="showCat('3d')">
+                    <h3>3D Models Library</h3>
+                    <p>Interactive anatomy visualization</p>
+                </div>
+                <div class="cat-card" onclick="showCat('treatment')">
+                    <h3>Treatment Resources</h3>
+                    <p>Specialists, centers, and care pathways</p>
+                </div>
+                <div class="cat-card" onclick="showCat('community')">
+                    <h3>Community &amp; Support</h3>
+                    <p>Connect with patients and caregivers</p>
+                </div>
+                <div class="cat-card" onclick="showCat('learn')">
+                    <h3>Learn &amp; Research</h3>
+                    <p>Education, references, and science</p>
+                </div>
+            </div>
+
+            <section class="stats" id="statsSection">
+                <div class="stat"><div class="num" data-target="50">0</div><div class="label">Conditions Covered</div></div>
+                <div class="stat"><div class="num" data-target="100">0</div><div class="label">3D Models</div></div>
+                <div class="stat"><div class="num" data-target="10000">0</div><div class="label">Community Members</div></div>
+                <div class="stat"><div class="num" data-target="500">0</div><div class="label">Specialists</div></div>
+            </section>
+
+            <section class="testimonials">
+                <h2>What Our Community Says</h2>
+
+                <div class="testimonial-slide active">
+                    <p>"This site helped me finally understand my child's condition. The 3D models were a game changer."</p>
+                    <div class="author">— Sarah M., Caregiver</div>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I found a specialist within days of using the treatment directory. I wish I'd found this sooner."</p>
+                    <div class="author">— James R., Patient</div>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"The community forum made me feel less alone. Connecting with others who understand is invaluable."</p>
+                    <div class="author">— Maria L., Parent</div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ===== DYNAMIC PAGES LOAD HERE ===== -->
+        <div id="page-content"></div>
+
+        <!-- ===== CONTACT (shown on demand) ===== -->
+        <section class="contact-section" id="contact" style="display:none">
+            <h2>Get in Touch</h2>
+
+            <form onsubmit="sendContactEmail(event)">
+                <div class="form-group">
+                    <input type="text" id="cName" placeholder=" " required />
+                    <label for="cName">Your Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" id="cEmail" placeholder=" " required />
+                    <label for="cEmail">Your Email</label>
+                </div>
+
+                <div class="form-group">
+                    <select id="cSubject" required>
+                        <option value="" disabled selected></option>
+                        <option>General Inquiry</option>
+                        <option>Report an Issue</option>
+                        <option>Suggest a Condition</option>
+                        <option>Partnership</option>
+                    </select>
+                    <label for="cSubject">Subject</label>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="cMsg" placeholder=" " required></textarea>
+                    <label for="cMsg">Your Message</label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Open Email to Send <i class="fas fa-paper-plane"></i>
+                </button>
+                <p class="contact-email-note">Your email app will open with the message ready. Review it and press Send there.</p>
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-col">
+                <h4>About The Veniverse</h4>
+                <p>A comprehensive resource for understanding genetic diseases and vascular malformations through interactive 3D models, expert information, and community support.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="loadPage('home');return false">Home</a>
+                <a href="#" onclick="showCat('genetic');return false">Genetic Diseases</a>
+                <a href="#" onclick="showCat('vascular');return false">Vascular Malformations</a>
+                <a href="#" onclick="loadPage('specialists');return false">Find a Specialist</a>
+                <a href="#" onclick="loadPage('contact');return false">Contact Us</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#" onclick="loadPage('publications');return false">Research</a>
+                <a href="#" onclick="loadPage('glossary');return false">Glossary</a>
+                <a href="#" onclick="loadPage('faqs');return false">FAQs</a>
+                <a href="#" onclick="loadPage('trials');return false">Clinical Trials</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Stay Connected</h4>
+                <div class="newsletter-input">
+                    <input type="email" placeholder="Your email" aria-label="Email for newsletter" />
+                    <button type="button" onclick="showToast('Subscribed!')">Subscribe</button>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2025 The Veniverse. Educational purposes only. Not medical advice.
+            <i class="fas fa-heart" style="color: #ff1493;"></i>
+        </div>
+    </footer>
+
+
+    <!-- ========== FLOATING BUTTONS ========== -->
+    <button type="button" id="backToTop" aria-label="Back to top"
+            onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <button type="button" id="chatBubble" aria-controls="helpChat" aria-expanded="false">
+        <i class="fas fa-comment-dots"></i> Need Help?
+    </button>
+
+    <section id="helpChat" class="help-chat" aria-label="Website help chat" aria-hidden="true" inert>
+        <header class="help-chat-header">
+            <div><strong>The Veniverse Helper</strong><span>Ask about topics and resources</span></div>
+            <button type="button" id="closeHelpChat" aria-label="Close help chat">&times;</button>
+        </header>
+        <div id="helpChatMessages" class="help-chat-messages" role="log" aria-live="polite">
+            <div class="help-chat-message assistant">Hi! Ask me where to find a topic, specialist resources, research, or support. I can help you navigate this site.</div>
+        </div>
+        <form id="helpChatForm" class="help-chat-form">
+            <label class="sr-only" for="helpChatInput">Your question</label>
+            <input id="helpChatInput" type="text" placeholder="Type your question..." autocomplete="off" required>
+            <button type="submit" aria-label="Send question"><i class="fas fa-paper-plane"></i></button>
+        </form>
+        <p class="help-chat-note">Website navigation help only; not medical advice.</p>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

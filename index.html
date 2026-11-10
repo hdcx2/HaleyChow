@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fbfbf8" />
+  <meta name="description" content="Haley Chow is a biomedical engineering student exploring genetics, bioinformatics, and tools that make research easier to use." />
+  <title>Haley Chow — Biomedical Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="ui.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Haley Chow, home">Haley Chow<span> / Biomedical Engineering · ’30</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar" aria-label="Open menu"><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#work">Work</a><a href="#research">Research</a><a href="#about">About</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+  <aside class="sidebar" id="site-sidebar" aria-hidden="true" aria-label="Main menu" inert>
+    <div class="sidebar-top"><span>HALEY CHOW <i> / 2026</i></span><button class="sidebar-close" type="button" aria-label="Close menu">×</button></div>
+    <nav class="sidebar-nav" aria-label="Page sections"><a href="#work"><small>01</small>Selected work <span>↘</span></a><a href="#research"><small>02</small>Research <span>↘</span></a><a href="#about"><small>03</small>About <span>↘</span></a><a href="#contact"><small>04</small>Contact <span>↘</span></a></nav>
+    <div class="sidebar-links"><p class="sidebar-label">FIND ME</p><a href="https://www.linkedin.com/in/haleyychow/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/hdcx2" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:hychoww@bu.edu">Email ↗</a></div>
+    <div class="sidebar-documents"><p class="sidebar-label">DOCUMENTS</p><a href="assets/Haley-Chow-Resume.pdf" download>Résumé <span>PDF ↓</span></a><a href="assets/Haley-Chow-CV.docx" download>Curriculum vitae <span>DOCX ↓</span></a></div>
+    <p class="sidebar-foot">BIOMEDICAL ENGINEERING<br />BOSTON UNIVERSITY · CLASS OF 2030</p>
+  </aside>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> BIOMEDICAL ENGINEERING · BOSTON UNIVERSITY</p>
+        <h1>Understanding biology.<br />Making it <em>useful.</em></h1>
+        <p class="hero-description">I’m Haley, a first-year biomedical engineering student interested in genetics, bioinformatics, and the ways research can support patients and caregivers.</p>
+        <div class="hero-actions"><a class="button" href="#work">Selected work <span aria-hidden="true">↓</span></a><a class="text-action" href="mailto:hychoww@bu.edu">Say hello <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <aside class="hero-aside" aria-label="Areas of interest">
+        <span class="aside-label">CURRENTLY EXPLORING</span>
+        <p>Pharmacogenomics</p><p>Rare disease research</p><p>Research data tools</p>
+        <span class="aside-note">Boston, Massachusetts<br />Expected graduation · 2030</span>
+      </aside>
+    </section>
+
+    <section class="metrics" aria-label="Selected project facts">
+      <div class="metric"><strong>8</strong><span>projects across research, software &amp; design</span></div>
+      <div class="metric"><strong>3</strong><span>data and learning tools built</span></div>
+      <div class="metric"><strong>15,900+</strong><span>pea plant offspring in one statistics study</span></div>
+    </section>
+
+    <section class="work-section section-wrap" id="work">
+      <div class="section-heading"><div><p class="eyebrow">A SELECTION · 2024—2026</p><h2>Questions I’ve <em>followed.</em></h2></div><p class="section-intro">Some began in a lab, others in a line of data or a problem someone needed help solving.</p></div>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">Everything <span>8</span></button>
+        <button class="filter-button" type="button" data-filter="research" aria-pressed="false">Research <span>4</span></button>
+        <button class="filter-button" type="button" data-filter="tools" aria-pressed="false">Tools <span>3</span></button>
+        <button class="filter-button" type="button" data-filter="design" aria-pressed="false">Design <span>1</span></button>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-featured" data-category="research" data-preview="CYP2C9 variants *2 and *3 · Five ancestry groups · PharmGKB / gnomAD / CPIC">
+          <div class="project-heading"><span class="project-number">01</span><div><span class="project-type">PHARMACOGENOMICS · 2026—PRESENT</span><h3>Same Pill, Different Person</h3></div></div>
+          <p class="project-question">Why can the same dose of celecoxib affect people differently?</p>
+          <p class="project-description">I’m looking at how CYP2C9 variants *2 and *3 change celecoxib metabolism. I compared variant frequencies across five ancestry groups using PharmGKB, gnomAD, and CPIC, then translated the findings into evidence-based dosing recommendations.</p>
+          <p class="project-method"><span>FOCUS</span> Variant frequency · drug metabolism · dosing guidance</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="tools" data-preview-url="assets/previews/genescope/templates/index.html" data-preview="GeneScope · DNA sequence analyzer">
+          <div class="project-screen"><iframe src="assets/previews/genescope/templates/index.html" title="GeneScope interface preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><span>GENESCOPE / LIVE INTERFACE</span></div>
+          <div class="project-heading"><span class="project-number">02</span><div><span class="project-type">BIOINFORMATICS · 2026—PRESENT</span><h3>GeneScope</h3></div></div>
+          <p class="project-question">A small, practical workspace for exploring a DNA sequence.</p>
+          <p class="project-description">A web app for nucleotide composition, reverse complements, RNA transcription, and protein translation. I built the analysis in Python and Flask, with an interactive JavaScript frontend.</p>
+          <p class="project-method"><span>BUILT WITH</span> Python · Flask · JavaScript</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="tools" data-preview-url="assets/previews/finiq/index.html" data-preview="FinIQ · Zebrafish research studio">
+          <div class="project-screen"><iframe src="assets/previews/finiq/index.html" title="FinIQ interface preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><span>FINIQ / RESEARCH DASHBOARD</span></div>
+          <div class="project-heading"><span class="project-number">03</span><div><span class="project-type">RESEARCH DATA · 2026—PRESENT</span><h3>FinIQ</h3></div></div>
+          <p class="project-question">How can zebrafish study data be easier to compare?</p>
+          <p class="project-description">A dashboard that imports CSV data and compares experimental groups across developmental stages. It brings summary statistics, visualizations, searchable tables, and downloadable reports into one place.</p>
+          <p class="project-method"><span>BUILT WITH</span> Python · HTML · CSS · JavaScript</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="tools" data-preview-url="assets/previews/axiom/index.html" data-preview="Axiom · Concept gap mapper">
+          <div class="project-screen"><iframe src="assets/previews/axiom/index.html" title="Axiom interface preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><span>AXIOM / CONCEPT WORKSPACE</span></div>
+          <div class="project-heading"><span class="project-number">04</span><div><span class="project-type">LEARNING TECHNOLOGY · 2026—PRESENT</span><h3>Axiom</h3></div></div>
+          <p class="project-question">Where does a student’s understanding have a gap?</p>
+          <p class="project-description">A study tool that turns lecture notes into a concept graph and uses speech plus semantic similarity to spot topics a student may not yet be able to explain.</p>
+          <p class="project-method"><span>BUILT WITH</span> Whisper · sentence-transformers · NetworkX · D3.js</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="research" data-preview-url="assets/previews/research/peas-to-probability.pdf" data-preview="15,900+ pea offspring · 3 statistical methods · All p-values above 0.6">
+          <div class="project-screen"><iframe src="assets/previews/research/peas-to-probability.pdf#toolbar=0&amp;navpanes=0&amp;view=FitH" title="From Peas to Probability report preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><span>FROM PEAS TO PROBABILITY / 18-PAGE IA</span></div>
+          <div class="project-heading"><span class="project-number">05</span><div><span class="project-type">MATHEMATICS IA · 2026</span><h3>From Peas to Probability</h3></div></div>
+          <p class="project-question">Do Mendel’s predicted ratios hold in a large sample?</p>
+          <p class="project-description">I tested the 3:1 and 9:3:3:1 ratios on more than 15,900 pea plant offspring using three statistical methods. None showed a significant deviation (all p &gt; 0.6).</p>
+          <p class="project-method"><span>METHODS</span> Chi-square · statistical analysis · probability</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="research" data-preview="Honey · Garlic · Combined · Observed over 48 hours">
+          <div class="project-heading"><span class="project-number">06</span><div><span class="project-type">BIOLOGY EXTENDED ESSAY · 2025—2026</span><h3>Honey, Garlic &amp; E. coli</h3></div></div>
+          <p class="project-question">Do honey and garlic affect bacterial growth on their own or together?</p>
+          <p class="project-description">I designed and ran an investigation into the antibacterial effects of honey and garlic, tested separately and in combination over 48 hours.</p>
+          <p class="project-method"><span>METHODS</span> Experimental design · bacterial culture · observation</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="research" data-preview="Methionine dose-response · E. coli growth · Four trials">
+          <div class="project-heading"><span class="project-number">07</span><div><span class="project-type">BIOLOGY IA · 2024—2026</span><h3>Methionine &amp; E. coli Growth</h3></div></div>
+          <p class="project-question">Does methionine change bacterial growth and protein synthesis?</p>
+          <p class="project-description">An independent experiment examining methionine’s effect on E. coli, with dose-response trends analyzed across four trials.</p>
+          <p class="project-method"><span>METHODS</span> Lab research · dose-response analysis · four trials</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+        <article class="project-card" data-category="design" data-preview-url="assets/previews/veniverse/index.html" data-preview="The Veniverse · Beyond the Blueprint">
+          <div class="project-screen"><iframe src="assets/previews/veniverse/index.html" title="The Veniverse interface preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><span>THE VENIVERSE / HEALTH EDUCATION</span></div>
+          <div class="project-heading"><span class="project-number">08</span><div><span class="project-type">HEALTH EDUCATION · 2024—PRESENT</span><h3>The Veniverse</h3></div></div>
+          <p class="project-question">Could genetic disease information be easier to find and understand?</p>
+          <p class="project-description">An educational platform about genetic diseases and vascular malformations, bringing together medical research, 3D anatomy, treatment information, and resources for patients and caregivers.</p>
+          <p class="project-method"><span>FOCUS</span> UI/UX · biomedical design · accessible information</p>
+          <button class="project-open" type="button">View project preview <span>↗</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="research-section" id="research"><div class="section-wrap research-layout">
+      <div><p class="eyebrow">WHAT KEEPS ME CURIOUS</p><h2>Biology is personal.<br /><em>So is the work.</em></h2><p class="research-intro">I’m drawn to questions where careful evidence can make a difference in what someone understands, builds, or decides next.</p></div>
+      <div class="research-list">
+        <article><span class="list-number">01</span><div><h3>Genetics &amp; personalized medicine</h3><p>How do inherited variants affect treatment response, and how do we explain the evidence responsibly?</p></div></article>
+        <article><span class="list-number">02</span><div><h3>Experimental biology</h3><p>What can a well-designed experiment tell us about a biological system, and what are its limits?</p></div></article>
+        <article><span class="list-number">03</span><div><h3>Tools for research &amp; learning</h3><p>Can software make complex data easier to explore without hiding the details that matter?</p></div></article>
+      </div>
+    </div></section>
+
+    <section class="about-section section-wrap" id="about"><div class="about-copy">
+      <p class="eyebrow">A LITTLE ABOUT ME</p><h2>Engineer in training.<br />Curious by <em>nature.</em></h2>
+      <p>I’m studying Biomedical Engineering and minoring in Materials Science &amp; Engineering at Boston University. I’m especially interested in genetics, rare diseases, and bioinformatics.</p>
+      <p>Outside class, I’ve coached tennis, tutored students, and led community service projects. Those experiences keep me attentive to how people learn and what makes information useful.</p>
+      <div class="about-facts"><div><span>DEGREE</span><b>Biomedical Engineering</b></div><div><span>MINOR</span><b>Materials Science &amp; Engineering</b></div><div><span>UNIVERSITY</span><b>Boston University</b></div><div><span>GRADUATION</span><b>May 2030</b></div></div>
+    </div></section>
+
+    <section class="contact-section" id="contact"><div class="section-wrap contact-inner"><div><p class="eyebrow">RESEARCH · COLLABORATION · QUESTIONS</p><h2>Let’s keep<br /><em>asking.</em></h2></div><div class="contact-card"><p>If something here overlaps with what you’re working on, I’d be glad to hear from you.</p><a class="email-link" href="mailto:hychoww@bu.edu">hychoww@bu.edu <span aria-hidden="true">↗</span></a><div class="social-links"><a href="https://www.linkedin.com/in/haleyychow/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/hdcx2" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></div></section>
+  </main>
+  <dialog class="project-modal" id="project-modal" aria-labelledby="preview-title">
+    <div class="modal-shell">
+      <header class="modal-header"><span>PROJECT PREVIEW <i id="modal-number">/ 01</i></span><div><button class="modal-expand" type="button" aria-expanded="false">Expand ⤢</button><button class="modal-close" type="button" aria-label="Close project preview">×</button></div></header>
+      <div class="modal-content"><section class="modal-copy"><p class="project-type" id="modal-type"></p><h2 id="preview-title"></h2><p class="modal-question" id="modal-question"></p><p class="modal-description" id="modal-description"></p><p class="modal-method" id="modal-method"></p><a class="github-link" href="https://github.com/hdcx2?tab=repositories" target="_blank" rel="noreferrer">Browse my projects on GitHub ↗</a></section><div class="modal-preview"><div class="preview-note" id="preview-note"><span>PROJECT NOTES</span><p id="modal-proof"></p></div><iframe id="modal-frame" title="Interactive project preview" loading="lazy" hidden></iframe></div></div>
+      <footer class="modal-footer"><span>ESC TO CLOSE</span><span>HALEY CHOW · PROJECT ARCHIVE</span></footer>
+    </div>
+  </dialog>
+  <footer class="site-footer section-wrap"><a class="brand" href="#home">Haley Chow</a><span>Biomedical Engineering · Boston University</span><a href="#home">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>

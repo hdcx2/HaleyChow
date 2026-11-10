@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f6f3">
+  <title>FinIQ — Zebrafish Research Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="polish.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="FinIQ home"><span class="fishmark">〰</span><span>Fin<span class="brand-iq">IQ</span></span></a>
+    <div class="overline">Research studio</div>
+    <nav class="nav-list" aria-label="Main navigation">
+      <button class="nav-item active" data-view="overview" title="Overview" aria-label="Overview"><span class="ico">◫</span>Overview</button>
+      <button class="nav-item" data-view="dataset" title="Dataset" aria-label="Dataset"><span class="ico">▦</span>Dataset <span class="nav-count" id="navCount">80</span></button>
+      <button class="nav-item" data-view="analysis" title="Analysis" aria-label="Analysis"><span class="ico">⌁</span>Analysis</button>
+      <button class="nav-item" data-view="report" title="Research report" aria-label="Research report"><span class="ico">▤</span>Report</button>
+    </nav>
+    <div class="side-bottom">
+      <div class="study"><div class="study-top"><strong><span class="dot"></span>Active workspace</strong><span class="live-label">LOCAL</span></div><small>Embryonic development</small><p>Compare developmental measurements across experimental groups and stages.</p></div>
+      <button class="nav-item import-side" id="importSide"><span class="ico">↥</span>Import research CSV</button>
+      <div class="side-caption">FINIQ · RESEARCH STUDIO</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div class="crumb"><span class="crumb-mark">F</span><span>Research workspace</span><span class="crumb-slash">/</span><b id="crumbName">Overview</b></div><div class="top-actions"><span class="local-badge"><i></i>Stored in this browser</span><button class="btn import-btn" id="importTop">↑ <span>Import CSV</span></button><input id="fileInput" type="file" accept=".csv,text/csv" hidden></div></header>
+    <div id="toast" class="toast" role="status"></div>
+
+    <section class="view active" id="view-overview" aria-labelledby="overviewTitle">
+      <div class="hero"><div class="hero-copy"><div class="eyebrow"><span class="hero-star">✳</span> ZEBRAFISH RESEARCH · PROJECT SPACE</div><h1 id="overviewTitle">Follow the science<br><em>as it develops.</em></h1><p>Explore developmental measurements, compare study groups, and turn your data into a clear research summary.</p><div class="hero-actions"><button class="btn hero-btn" data-go="analysis">Explore analysis <span>→</span></button><span class="data-status"><i></i><span id="demoBadge">Illustrative demo data</span></span></div></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="fish-body"><div class="fish-tail"></div><div class="fish-eye"></div><div class="fish-stripe stripe-one"></div><div class="fish-stripe stripe-two"></div><div class="fish-stripe stripe-three"></div></div><span class="art-label label-stage">120 <small>hpf</small></span><span class="art-label label-gene">Danio rerio</span><span class="bubble bubble-a"></span><span class="bubble bubble-b"></span><span class="bubble bubble-c"></span></div><div class="hero-foot"><span>01 / STUDY OVERVIEW</span><span>DEVELOPMENTAL MORPHOMETRICS</span></div></div>
+      <div class="section-heading"><div><span class="section-kicker">AT A GLANCE</span><h2>Your study, in numbers</h2></div><span class="updated-label">Dataset overview <span>↗</span></span></div>
+      <div class="row cards" id="statsCards"></div>
+      <div class="row overview-bottom"><section class="panel chart-panel"><div class="panel-head"><div><span class="panel-kicker">GROWTH CURVE</span><h2>Measurements over time</h2><div class="hint">Group means with ±1 sample SD</div></div><button class="text-action" data-go="analysis">Full analysis <span>→</span></button></div><select class="select" id="metricOverview" aria-label="Overview chart metric"><option value="length">Body length (mm)</option><option value="heart_rate">Heart rate (bpm)</option><option value="eye_diameter">Eye diameter (mm)</option></select><svg class="plot" id="chartOverview" role="img" aria-label="Group measurements across developmental stages"></svg><div class="legend" id="legendOverview"></div></section>
+      <section class="panel groups-panel"><div class="panel-head"><div><span class="panel-kicker">STUDY DESIGN</span><h2>Experimental groups</h2><div class="hint">A quick view of your conditions</div></div><span class="panel-icon">◉</span></div><div class="group-list" id="groupCards"></div><div class="mini-note"><span>✳</span><p>Summary values are descriptive. Consider biological replicates and study design before drawing conclusions.</p></div></section></div>
+      <div class="provenance-strip"><span class="prov-icon">i</span><span><b>Data note</b> &nbsp;The built-in example is simulated for demonstration. Import your own publicly available measurements for real analysis.</span><button class="text-action" data-go="report">View provenance <span>→</span></button></div>
+    </section>
+
+    <section class="view" id="view-dataset" aria-labelledby="datasetTitle">
+      <div class="view-heading"><div><span class="section-kicker">YOUR OBSERVATIONS</span><h1 id="datasetTitle">Dataset <span class="heading-spark">✳</span></h1><p>Inspect, search, and filter sample-level measurements.</p></div><div class="heading-actions"><button class="btn" id="templateBtn">↓ CSV template</button><button class="btn btn-green" id="downloadBtn">↓ Export data</button></div></div>
+      <div class="dataset-callout"><span class="prov-icon">✳</span><span id="dataNotice">This is simulated demonstration data. Import a real study CSV to work with published measurements.</span></div>
+      <section class="panel table-panel dataset-card"><div class="dataset-toolbar"><div><h2>Observation table <span class="row-chip" id="rowChip">80 rows</span></h2><div class="hint">One fish × one developmental stage per row</div></div><div class="table-actions"><label class="search-wrap"><span>⌕</span><input class="search" id="searchInput" placeholder="Search samples…"></label><select id="groupFilter" class="select filter-select" aria-label="Filter by group"><option value="all">All groups</option></select><select id="stageFilter" class="select filter-select" aria-label="Filter by stage"><option value="all">All stages</option></select></div></div><div class="table-scroll"><table><thead><tr><th>Sample ID</th><th>Group</th><th>Stage</th><th>Body length <small>mm</small></th><th>Heart rate <small>bpm</small></th><th>Eye diameter <small>mm</small></th></tr></thead><tbody id="tableBody"></tbody></table></div><div class="table-foot"><span id="rowCount"></span><span>Showing up to 250 rows <span class="foot-dot">·</span> sorted as imported</span></div></section>
+      <div class="format-note"><span>CSV FORMAT</span><code>sample_id, group, stage, body_length_mm, heart_rate_bpm, eye_diameter_mm</code><span>Required: group, stage, body_length</span></div>
+    </section>
+
+    <section class="view" id="view-analysis" aria-labelledby="analysisTitle">
+      <div class="view-heading"><div><span class="section-kicker">COMPARE CONDITIONS</span><h1 id="analysisTitle">Analysis <span class="heading-spark">✳</span></h1><p>Explore group differences across developmental time points.</p></div><span class="analysis-tag"><i></i>DESCRIPTIVE STATISTICS</span></div>
+      <div class="analysis-controls panel"><div><span class="control-label">MEASURE</span><select class="select" id="metricAnalysis"><option value="length">Body length (mm)</option><option value="heart_rate">Heart rate (bpm)</option><option value="eye_diameter">Eye diameter (mm)</option></select></div><div><span class="control-label">COMPARE</span><div class="compare-pair"><select class="select" id="groupA" aria-label="First comparison group"></select><span>vs</span><select class="select" id="groupB" aria-label="Second comparison group"></select></div></div><div class="analysis-explainer">Mean at each stage <span>·</span> whiskers show ±1 sample SD</div></div>
+      <div class="row analysis-grid"><section class="panel analysis-chart-panel"><div class="panel-head"><div><span class="panel-kicker">STAGE-BY-STAGE</span><h2 id="analysisChartTitle">Body length (mm)</h2><div class="hint">Each point represents the group mean for that stage</div></div><span class="chart-unit" id="chartUnit">mm</span></div><svg class="plot analysis-plot" id="chartAnalysis" role="img" aria-label="Group comparison chart"></svg><div class="legend" id="legendAnalysis"></div></section><section class="panel delta-panel"><span class="panel-kicker">OVERALL COMPARISON</span><h2>Group summary</h2><div class="hint">Across all available stages</div><div id="comparisonSummary"></div><div class="caution-box"><span>i</span><p>Descriptive results only. No statistical significance test or causal inference is performed.</p></div></section></div>
+      <section class="panel stage-table-panel"><div class="panel-head"><div><span class="panel-kicker">DETAIL BY TIME POINT</span><h2>Stage summary</h2><div class="hint">Mean ± sample standard deviation; n is the number of observations in each group-stage</div></div></div><div class="table-scroll"><table class="summary-table"><thead><tr><th>Stage</th><th id="sumHeadA">Group A</th><th>n</th><th id="sumHeadB">Group B</th><th>n</th><th>Mean difference</th></tr></thead><tbody id="summaryBody"></tbody></table></div></section>
+    </section>
+
+    <section class="view" id="view-report" aria-labelledby="reportTitle">
+      <div class="view-heading"><div><span class="section-kicker">READY TO SHARE</span><h1 id="reportTitle">Research report <span class="heading-spark">✳</span></h1><p>A transparent, downloadable summary of the current dataset.</p></div><button class="btn btn-green" id="reportBtn">↓ Download report</button></div>
+      <div class="report-layout"><section class="panel report-preview"><div class="report-topline"><span class="report-mark">F</span><span>FINIQ <i>/</i> RESEARCH NOTE</span><span class="report-demo" id="reportDemoBadge">DEMO DATA</span></div><div id="reportPreview" class="report-content"></div><div class="report-footer"><span>FinIQ · Zebrafish Research Studio</span><span id="reportDate"></span></div></section><aside class="report-aside"><section class="panel source-card"><span class="panel-kicker">PROVENANCE</span><h2>Where is this data from?</h2><p>Keep track of the original source when analyzing public research measurements.</p><label for="sourceInput">Study, accession, or URL</label><input id="sourceInput" class="source-input" placeholder="e.g. GEO accession or study DOI"><div class="source-links"><a href="https://zfin.org/" target="_blank" rel="noreferrer">Browse ZFIN <span>↗</span></a><a href="https://www.ncbi.nlm.nih.gov/gds/?term=Danio%20rerio" target="_blank" rel="noreferrer">Search NCBI GEO <span>↗</span></a></div></section><div class="report-tip"><span>✳</span><p>Reports label simulated data clearly. For real data, add the study citation and check measurement units before sharing.</p></div></aside></div>
+    </section>
+  </main>
+</div>
+<div class="import-backdrop" id="importBackdrop" hidden>
+  <section class="import-dialog" role="dialog" aria-modal="true" aria-labelledby="importTitle">
+    <div class="import-dialog-top"><div><span class="section-kicker">CSV IMPORT WIZARD</span><h2 id="importTitle">Map your study columns</h2><p id="importFileName">Review how FinIQ will read your file before importing.</p></div><button class="dialog-close" id="closeImport" aria-label="Close import dialog">×</button></div>
+    <div class="mapping-grid" id="mappingGrid"></div>
+    <div class="validation-summary" id="validationSummary"></div>
+    <div class="import-preview"><div class="preview-label">PREVIEW <span id="previewCount"></span></div><div class="table-scroll"><table><thead id="previewHead"></thead><tbody id="previewBody"></tbody></table></div></div>
+    <div class="import-dialog-actions"><button class="btn" id="cancelImport">Cancel</button><button class="btn btn-green" id="confirmImport">Import observations</button></div>
+  </section>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<div class="breadcrumb">
+    <a href="#" onclick="loadPage('home');return false">Home</a> &rsaquo;
+    <a href="#" onclick="showCat('genetic');return false">Genetic Diseases</a> &rsaquo;
+    <a href="#" onclick="loadPage('singlegene');return false">Single-Gene Disorders</a> &rsaquo;
+    <span>Marfan Syndrome</span>
+</div>
+<h1 class="page-title">Marfan Syndrome</h1>
+<p class="page-subtitle">A genetic disorder affecting the body's connective tissue</p>
+<div class="title-bar"></div>
+
+<p class="resource-note"><strong>Visual learning:</strong> See NIH diagrams and genetics information in the <a href="https://medlineplus.gov/genetics/condition/marfan-syndrome/" target="_blank" rel="noopener">MedlinePlus Genetics Marfan syndrome overview</a>.</p>
+
+<div class="viewer-3d"> 
+    <h3><i class="fas fa-cube"></i> Interactive 3D Model</h3> 
+    <p>Explore connective tissue structures affected by Marfan Syndrome</p> 
+    <div class="viewer-controls"> <button class="viewer-btn">
+        <i class="fas fa-sync-alt"></i> Rotate</button> 
+        <button class="viewer-btn"><i class="fas fa-search-plus"></i> Zoom In</button> 
+        <button class="viewer-btn"><i class="fas fa-search-minus"></i> Zoom Out</button> 
+        <button class="viewer-btn"><i class="fas fa-expand"></i> Fullscreen</button> 
+    </div> 
+    <div> 
+        <span class="hotspot">Aortic Root</span> 
+        <span class="hotspot">Lens</span> 
+        <span class="hotspot">Skeletal System</span> 
+    </div> 
+    <p class="viewer-note">3D models are being built — check back soon</p> 
+</div>
+
+<div class="tabs"> 
+    <div class="tab-btns"> 
+        <button class="tab-btn active" onclick="switchTab(this,'marf-overview')">Overview</button> 
+        <button class="tab-btn" onclick="switchTab(this,'marf-symptoms')">Symptoms</button> 
+        <button class="tab-btn" onclick="switchTab(this,'marf-causes')">Causes</button> 
+        <button class="tab-btn" onclick="switchTab(this,'marf-diagnosis')">Diagnosis</button> 
+        <button class="tab-btn" onclick="switchTab(this,'marf-treatment')">Treatment</button> 
+    </div> 
+    <div class="tab-panel active" id="marf-overview"> 
+        <h4>Overview</h4> 
+        <p>Marfan Syndrome is a genetic disorder that affects the body's connective tissue. It can impact the skeletal system, cardiovascular system, and eyes. People with Marfan Syndrome are often tall and slender with disproportionately long limbs.</p> 
+    </div> 
+    <div class="tab-panel" id="marf-symptoms"> 
+        <h4>Symptoms</h4> 
+        <ul> 
+            <li>Tall, slender build with long arms, legs, fingers, and toes</li> 
+            <li>Flexible joints and flat feet</li> 
+            <li>Heart problems, including aortic dilation and mitral valve prolapse</li> 
+            <li>Eye lens dislocation (ectopia lentis)</li> 
+            <li>Scoliosis or abnormal spinal curvature</li> 
+            <li>Stretch marks unrelated to weight change</li> 
+        </ul> </div> <div class="tab-panel" id="marf-causes"> 
+        <h4>Causes</h4> 
+        <p>Caused by mutations in the <strong>FBN1</strong> gene (fibrillin-1). It follows an <strong>autosomal dominant</strong> inheritance pattern. About 25% of cases arise from new mutations with no family history.</p> 
+    </div> 
+    <div class="tab-panel" id="marf-diagnosis"> 
+        <h4>Diagnosis</h4> 
+        <ul> 
+            <li>Physical examination assessing skeletal features</li> 
+            <li>Echocardiogram to evaluate aortic root and heart valves</li> 
+            <li>Eye examination for lens dislocation</li> 
+            <li>Ghent nosology criteria</li> 
+            <li>Family history assessment</li> 
+            <li>Genetic testing for FBN1 mutations</li> 
+        </ul> 
+    </div> 
+    <div class="tab-panel" id="marf-treatment"> 
+        <h4>Treatment</h4> 
+        <ul> 
+            <li><strong>Cardiovascular monitoring:</strong> Regular echocardiograms</li> 
+            <li><strong>Medications:</strong> Beta-blockers or ARBs to slow aortic dilation</li> 
+            <li><strong>Surgery:</strong> Aortic root replacement if needed</li> 
+            <li><strong>Vision correction:</strong> Glasses, contacts, or surgery</li> 
+            <li><strong>Orthopedic care:</strong> Bracing or surgery for scoliosis</li>
+            <li><strong>Activity guidance:</strong> Low-impact exercise recommended</li> 
+        </ul> 
+    </div> 
+</div>
+
+<div class="key-facts"> 
+    <div class="fact-card">
+        <div class="fact-label">Prevalence</div>
+        <div class="fact-value">1 in 5,000</div>
+    </div> 
+    <div class="fact-card">
+        <div class="fact-label">Gene</div><div class="fact-value">FBN1</div></div> <div class="fact-card"><div class="fact-label">Inheritance</div><div class="fact-value">Autosomal Dominant</div></div> <div class="fact-card"><div class="fact-label">Affects</div><div class="fact-value">Connective Tissue</div></div> </div>
+
+<div class="actions-row"> 
+    <button class="bookmark-btn" onclick="toggleBookmark(this,'Marfan')"><i class="far fa-heart"></i> Bookmark</button> 
+    <span style="margin-left:auto;font-size:14px;color:var(--text-secondary)">Was this helpful?</span> 
+    <button class="helpful-btn" onclick="showToast('Thanks!')"><i class="fas fa-thumbs-up"></i></button> 
+    <button class="helpful-btn" onclick="showToast('We will improve this.')"><i class="fas fa-thumbs-down"></i></button> 
+</div>
+
+<h3 style="margin-bottom:16px">Related Resources</h3> 
+<div class="related"> 
+    <div class="related-card" onclick="loadPage('singlegene-eds')">
+        <h4> Related Conditions</h4>
+        <p>Ehlers-Danlos and connective tissue disorders</p>
+    </div> <div class="related-card" onclick="loadPage('therapies')">
+        <h4> Treatment Options</h4>
+        <p>Medications, surgery, monitoring</p>
+    </div> 
+    <div class="related-card" onclick="loadPage('specialists')">
+        <h4>👨‍⚕️ Find a Specialist</h4><p>Cardiologists and geneticists</p>
+    </div> 
+    <div class="related-card" onclick="loadPage('forums')">
+        <h4>💬 Community</h4>
+        <p>Connect with Marfan patients</p>
+    </div> 
+</div>

@@ -1,0 +1,99 @@
+<div class="breadcrumb">
+    <a href="#" onclick="loadPage('home');return false">Home</a> &rsaquo;
+    <a href="#" onclick="showCat('genetic');return false">Genetic Diseases</a> &rsaquo;
+    <a href="#" onclick="loadPage('singlegene');return false">Single-Gene Disorders</a> &rsaquo;
+    <span>Ehlers-Danlos Syndrome</span>
+</div>
+
+<h1 class="page-title">Ehlers-Danlos Syndrome (EDS)</h1>
+<p class="page-subtitle">A group of inherited disorders affecting connective tissues</p>
+<div class="title-bar"></div>
+
+<p class="resource-note"><strong>Visual learning:</strong> See NIH diagrams and genetics information in the <a href="https://medlineplus.gov/genetics/condition/ehlers-danlos-syndrome/" target="_blank" rel="noopener">MedlinePlus Genetics Ehlers-Danlos syndrome overview</a>.</p>
+
+<div class="viewer-3d">
+    <h3><i class="fas fa-cube"></i> Interactive 3D Model</h3>
+    <p>Explore how EDS affects joints, skin, and blood vessels</p>
+    <div class="viewer-controls">
+        <button class="viewer-btn"><i class="fas fa-sync-alt"></i> Rotate</button>
+        <button class="viewer-btn"><i class="fas fa-search-plus"></i> Zoom In</button>
+        <button class="viewer-btn"><i class="fas fa-search-minus"></i> Zoom Out</button>
+        <button class="viewer-btn"><i class="fas fa-expand"></i> Fullscreen</button>
+    </div>
+    <div>
+        <span class="hotspot">Hypermobile Joint</span>
+        <span class="hotspot">Collagen Fibers</span>
+        <span class="hotspot">Skin Elasticity</span>
+    </div>
+    <p class="viewer-note">3D models are being built — check back soon</p>
+</div>
+
+<div class="tabs">
+    <div class="tab-btns">
+        <button class="tab-btn active" onclick="switchTab(this,'eds-overview')">Overview</button>
+        <button class="tab-btn" onclick="switchTab(this,'eds-symptoms')">Symptoms</button>
+        <button class="tab-btn" onclick="switchTab(this,'eds-causes')">Causes</button>
+        <button class="tab-btn" onclick="switchTab(this,'eds-diagnosis')">Diagnosis</button>
+        <button class="tab-btn" onclick="switchTab(this,'eds-treatment')">Treatment</button>
+    </div>
+    <div class="tab-panel active" id="eds-overview">
+        <h4>Overview</h4>
+        <p>Ehlers-Danlos Syndrome (EDS) is a group of 13 heritable disorders that affect connective tissues, primarily the skin, joints, and blood vessel walls. The most common type is Hypermobile EDS (hEDS).</p>
+    </div>
+    <div class="tab-panel" id="eds-symptoms">
+        <h4>Symptoms</h4>
+        <ul>
+            <li>Hypermobile (overly flexible) joints prone to dislocations</li>
+            <li>Skin that is stretchy, fragile, and bruises easily</li>
+            <li>Chronic widespread pain and fatigue</li>
+            <li>Slow wound healing and abnormal scarring</li>
+            <li>Cardiovascular complications (especially vascular EDS)</li>
+            <li>Digestive issues and autonomic dysfunction</li>
+        </ul>
+    </div>
+    <div class="tab-panel" id="eds-causes">
+        <h4>Causes</h4>
+        <p>Caused by mutations in collagen genes: <strong>COL5A1/COL5A2</strong> (Classical), <strong>COL3A1</strong> (Vascular), and others. Most types follow autosomal dominant inheritance. The genetic basis of Hypermobile EDS is still being researched.</p>
+    </div>
+    <div class="tab-panel" id="eds-diagnosis">
+        <h4>Diagnosis</h4>
+        <ul>
+            <li>Clinical evaluation using the 2017 international criteria</li>
+            <li>Beighton score for joint hypermobility (0-9 scale)</li>
+            <li>Family history and inheritance pattern assessment</li>
+            <li>Genetic testing (confirms most types except hEDS)</li> <li>Skin biopsy in some cases</li> <li>Echocardiogram for cardiovascular screening</li> </ul> </div> <div class="tab-panel" id="eds-treatment"> <h4>Treatment</h4> <ul> <li><strong>Physical therapy:</strong> Muscle strengthening to stabilize joints</li> <li><strong>Pain management:</strong> Medications, TENS, CBT</li> <li><strong>Joint protection:</strong> Bracing, activity modification</li> <li><strong>Cardiovascular monitoring:</strong> Regular imaging for vascular EDS</li> <li><strong>Skin care:</strong> Wound care strategies, sun protection</li> <li><strong>Occupational therapy:</strong> Adaptive tools for daily living</li> </ul> </div> </div>
+
+<div class="key-facts"> 
+    <div class="fact-card">
+        <div class="fact-label">Subtypes</div>
+        <div class="fact-value">13 Types</div>
+    </div> 
+    <div class="fact-card">
+        <div class="fact-label">Most Common</div><div class="fact-value">Hypermobile EDS</div></div> <div class="fact-card"><div class="fact-label">Affects</div><div class="fact-value">Collagen</div></div> <div class="fact-card"><div class="fact-label">Diagnosis</div><div class="fact-value">Clinical + Genetic</div></div> </div>
+
+<div class="actions-row"> 
+    <button class="bookmark-btn" onclick="toggleBookmark(this,'EDS')"><i class="far fa-heart"></i> Bookmark</button> 
+    <span style="margin-left:auto;font-size:14px;color:var(--text-secondary)">Was this helpful?</span> 
+    <button class="helpful-btn" onclick="showToast('Thanks!')"><i class="fas fa-thumbs-up"></i></button> 
+    <button class="helpful-btn" onclick="showToast('We will improve this.')"><i class="fas fa-thumbs-down"></i></button> 
+</div>
+
+<h3 style="margin-bottom:16px">Related Resources</h3> 
+<div class="related"> 
+    <div class="related-card" onclick="loadPage('singlegene-marfan')">
+        <h4>Related Conditions</h4>
+        <p>Marfan and connective tissue disorders</p>
+    </div>
+    <div class="related-card" onclick="loadPage('therapies')">
+        <h4>Treatment Options</h4>
+        <p>Physical therapy, pain management</p>
+    </div> 
+    <div class="related-card" onclick="loadPage('specialists')">
+        <h4> Find a Specialist</h4>
+        <p>Geneticists and rheumatologists</p>
+    </div> 
+    <div class="related-card" onclick="loadPage('forums')">
+        <h4>Community</h4>
+        <p>EDS support groups</p>
+    </div> 
+</div>
