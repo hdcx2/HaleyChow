@@ -55,6 +55,7 @@ const modalExpand = document.querySelector('.modal-expand');
 const modalClose = document.querySelector('.modal-close');
 const modalFrame = document.querySelector('#modal-frame');
 const previewNote = document.querySelector('#preview-note');
+const githubLink = document.querySelector('.github-link');
 
 document.querySelectorAll('.project-open').forEach(button => {
   button.addEventListener('click', () => {
@@ -68,6 +69,9 @@ document.querySelectorAll('.project-open').forEach(button => {
     document.querySelector('#modal-description').textContent = project.querySelector('.project-description').textContent;
     document.querySelector('#modal-method').textContent = project.querySelector('.project-method').textContent;
     document.querySelector('#modal-proof').textContent = project.dataset.preview;
+    const repositoryUrl = project.dataset.repoUrl;
+    githubLink.hidden = !repositoryUrl;
+    if (repositoryUrl) githubLink.href = repositoryUrl;
 
     const previewUrl = project.dataset.previewUrl;
     if (previewUrl) {
