@@ -3,6 +3,19 @@ const sidebar = document.querySelector('.sidebar');
 const sidebarBackdrop = document.querySelector('.sidebar-backdrop');
 const sidebarClose = document.querySelector('.sidebar-close');
 
+const portraitImage = document.querySelector('.portrait-image');
+const portraitPlaceholder = document.querySelector('.portrait-placeholder');
+if (portraitImage && portraitPlaceholder) {
+  const showPortrait = () => {
+    if (portraitImage.naturalWidth > 0) {
+      portraitImage.hidden = false;
+      portraitPlaceholder.hidden = true;
+    }
+  };
+  portraitImage.addEventListener('load', showPortrait);
+  showPortrait();
+}
+
 function setSidebar(open) {
   sidebar.classList.toggle('open', open);
   sidebarBackdrop.classList.toggle('visible', open);

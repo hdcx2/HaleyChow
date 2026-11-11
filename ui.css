@@ -81,6 +81,63 @@ body.menu-open { overflow: hidden; }
 .project-open span { margin-left: 9px; color: var(--blue); }
 .project-open:hover { color: var(--blue); border-color: var(--blue); }
 
+/* A more personal, editorial introduction */
+.hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, .72fr);
+  gap: clamp(42px, 8vw, 112px);
+  padding-top: 67px;
+  padding-bottom: 38px;
+}
+.hero h1 { font-size: clamp(62px, 8vw, 91px); letter-spacing: -.065em; }
+.hero-period { color: #cc765d; }
+.hero-description { max-width: 505px; margin-top: 19px; font-size: 14px; line-height: 1.8; }
+.hero-note { max-width: 390px; margin-top: 35px; padding: 10px 0 10px 14px; border-left: 2px solid #d98a6a; }
+.hero-note > span { color: #9b7565; font: 8px var(--mono); letter-spacing: .1em; }
+.hero-note p { margin: 6px 0 0; color: #65727a; font: italic 15px/1.5 var(--serif); }
+.portrait-card { width: min(100%, 315px); justify-self: center; margin: 6px 0 0; transform: rotate(1.2deg); }
+.portrait-frame { position: relative; padding: 10px; background: #fff; border: 1px solid #e2dfd8; box-shadow: 6px 9px 0 #eae7df; }
+.portrait-placeholder { position: relative; display: grid; min-height: 335px; aspect-ratio: 4 / 4.55; place-items: center; overflow: hidden; background: #e7e6df; color: #425565; }
+.portrait-placeholder::before, .portrait-placeholder::after { position: absolute; content: ""; border: 1px solid #53677940; border-radius: 50%; }
+.portrait-placeholder::before { width: 74%; aspect-ratio: 1; top: 13%; left: -18%; }
+.portrait-placeholder::after { width: 85%; aspect-ratio: 1; right: -28%; bottom: -31%; }
+.portrait-sun { position: absolute; width: 77px; height: 77px; top: 18%; right: 18%; border-radius: 50%; background: #d3a17e; opacity: .78; }
+.portrait-mark { z-index: 1; margin-top: -14px; color: #465d68; font: 500 clamp(58px, 7vw, 83px)/1 var(--serif); letter-spacing: -.09em; }
+.portrait-placeholder-note { position: absolute; z-index: 1; left: 14px; bottom: 13px; color: #596c74; font: 7px/1.7 var(--mono); letter-spacing: .06em; }
+.portrait-scribble { position: absolute; top: 10px; left: 13px; color: #ba725d; font-size: 24px; }
+.portrait-image { position: absolute; inset: 10px; z-index: 2; width: calc(100% - 20px); height: calc(100% - 20px); object-fit: cover; object-position: center 35%; }
+.portrait-image[hidden] { display: none; }
+.portrait-card figcaption { display: flex; justify-content: space-between; margin-top: 17px; padding: 0 3px; color: #7c888b; font: 7px var(--mono); letter-spacing: .08em; }
+.intro-strip { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 14px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: #68777b; font: 8px var(--mono); letter-spacing: .055em; }
+.intro-strip i { color: #cc765d; font-style: normal; font-size: 14px; }
+.about-section { display: grid; grid-template-columns: minmax(100px, .38fr) minmax(0, 1.62fr); gap: clamp(28px, 6vw, 78px); border-top: 1px solid var(--rule); }
+.about-label { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 6px 0 2px; }
+.about-index { color: #a2abad; font: 8px var(--mono); }
+.about-copy { max-width: none; }
+.about-copy h2 { font-size: clamp(43px, 5vw, 60px); }
+.about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 800px; margin-top: 18px; }
+.about-copy .about-body p { margin: 0; color: #68767d; font-size: 12px; line-height: 1.9; }
+.about-facts { max-width: none; }
+
+@media(max-width:760px) {
+  .hero { grid-template-columns: minmax(0, 1fr) minmax(200px, .72fr); gap: 25px; padding-top: 56px; }
+  .hero h1 { font-size: clamp(57px, 9vw, 73px); }
+  .portrait-placeholder { min-height: 285px; }
+  .intro-strip { justify-content: center; flex-wrap: wrap; padding: 13px 0; }
+  .about-section { grid-template-columns: 1fr; gap: 14px; }
+  .about-label { flex-direction: row; align-items: center; }
+}
+@media(max-width:540px) {
+  .hero { grid-template-columns: 1fr; padding-top: 49px; }
+  .hero h1 { font-size: clamp(60px, 14vw, 78px); }
+  .hero-description { max-width: 450px; }
+  .hero-note { margin-top: 24px; }
+  .portrait-card { width: min(70%, 245px); justify-self: end; margin: 23px 8px 0 0; }
+  .portrait-placeholder { min-height: 0; }
+  .intro-strip { gap: 7px 10px; font-size: 7px; }
+  .about-body { grid-template-columns: 1fr; gap: 12px; }
+  .about-copy h2 { font-size: 44px; }
+}
+
 .project-modal {
   position: fixed;
   inset: 0;
